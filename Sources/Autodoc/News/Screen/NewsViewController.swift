@@ -3,7 +3,7 @@ import UI
 
 final public class NewsViewController: UIViewController {
     
-    var viewModel: NewsViewModel? {
+    public var viewModel: NewsViewModel? {
         didSet {
             bind()
         }
