@@ -4,7 +4,6 @@ extension UIImage {
     
     enum ImageName: String {
         case iconNewsPlaceholder
-        case iconShare
     }
     
     convenience init?(imageName: ImageName) {
