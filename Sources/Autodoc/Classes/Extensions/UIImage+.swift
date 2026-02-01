@@ -3,7 +3,8 @@ import UIKit
 extension UIImage {
     
     enum ImageName: String {
-        case newsPlaceholder
+        case iconNewsPlaceholder
+        case iconShare
     }
     
     convenience init?(imageName: ImageName) {
