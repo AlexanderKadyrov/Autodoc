@@ -7,7 +7,7 @@ import UI
 final class NewsAsyncImageViewProvider: AsyncImageViewProvider {
     
     private enum Constants {
-        static let placeholder = UIImage(named: "pattern_mechanical")
+        static let placeholder = UIImage(imageName: .iconNewsPlaceholder)
     }
     
     private let url: URL?
