@@ -9,7 +9,9 @@ final public class NewsViewController: UIViewController {
         }
     }
     
-    private let collectionViewLayout = NewsCollectionViewLayout()
+    private var collectionViewLayout: NewsCollectionViewLayout {
+        return NewsCollectionViewLayout()
+    }
     
     private lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
