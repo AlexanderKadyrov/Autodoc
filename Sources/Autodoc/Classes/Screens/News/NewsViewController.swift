@@ -19,7 +19,6 @@ final public class NewsViewController: UIViewController {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.register(NewsCollectionCellView.self, forCellWithReuseIdentifier: "NewsCollectionCellView")
-        view.delegate = self
         return view
     }()
     
@@ -49,11 +48,5 @@ final public class NewsViewController: UIViewController {
     
     private func bind() {
         dataSource.adapter = viewModel?.collectionDataSourceAdapter
-    }
-}
-
-extension NewsViewController: UICollectionViewDelegate {
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
     }
 }

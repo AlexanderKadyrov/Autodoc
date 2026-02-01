@@ -10,6 +10,8 @@ final class NewsCollectionSectionViewModel: PageableCollectionSectionViewModel, 
         static let offsetLimit = 15
     }
     
+    @DI(\.routerManager) private var routerManager
+    
     private var fetchNewsTask: Task<Void, Never>?
     private var cancellables: [AnyCancellable] = []
     
@@ -59,5 +61,11 @@ final class NewsCollectionSectionViewModel: PageableCollectionSectionViewModel, 
     
     private func refresh(offset newValue: Int) {
         offset = offset == Constants.offsetInitial ? newValue : (offset + newValue)
+    }
+    
+    override func didSelectItemAt(index: Int) {
+        guard let cellViewModel: NewsCollectionCellViewModel = cellViewModelAt(index: index) else { return }
+        let fullUrl = cellViewModel.model.fullUrl
+        routerManager.open(url: fullUrl)
     }
 }
